@@ -15,8 +15,10 @@ use App\Http\Controllers\MainController;
 */
 
 // Route::get('/', 'MainController@index');
-
+// 
 Route::get('/', [MainController::class, 'index'])->name('home');
+
+Route::get('/search', [MainController::class, 'search'])->name('search');
 
 Route::get('/layout', function () {
     return view('layout');

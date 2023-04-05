@@ -28,13 +28,15 @@
                 </tbody>
                 
             </table>
-            {{ $users->links() }}
+            {{ $users->appends(['s' => request()->s])->links() }}
             
 
 
         </div><!-- ./table-responsive-->
 
-        
+    @else
+
+        <p>Записей не найдено!</p>
 
     @endif
 @endsection

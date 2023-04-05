@@ -25,4 +25,14 @@ class MainController extends Controller
         // отправляем в компонент home полученный список записей
         return view('home', compact('users'));
     }
+
+    public function search(Request $request) 
+    {
+        // присваиваем переменной $s значение, полученное с инпута
+        $s = $request->s;
+        // dd($s);
+
+        $users = Phonebook::where('name', 'LIKE', "%{$s}%")->orderBy('name')->paginate(10);
+        return view('home', compact('users'));
+    }
 }

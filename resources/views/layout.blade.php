@@ -19,10 +19,10 @@
 
         <div class="col-md-12">
 
-            <form>
+            <form method="get" action="{{ route('search') }}">
                 <div class="form-row">
                     <div class="form-group col-md-10">
-                        <input type="text" class="form-control" id="q" name="q" placeholder="Search...">
+                        <input type="text" class="form-control" id="q" name="s" placeholder="Search...">
                     </div>
                     <div class="form-group col-md-2">
                         <button type="submit" class="btn btn-primary btn-block">Search</button>
